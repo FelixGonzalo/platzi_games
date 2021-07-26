@@ -1,0 +1,147 @@
+.contenedor--cajas {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto 20px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-evenly;
+	@include media(tablet) {
+		flex-direction: row;
+	}
+}
+
+.caja {
+	width: 100%;
+	@include caja;
+	border-radius: 5px;
+	img {
+		width: 100%;
+		border-radius: 5px 5px 0 0;
+	}
+	&__contenido {
+		padding: 25px;
+		background-color: $color-claro;
+	}
+	&__categoria {
+		color: $color-secundario;
+		@include titulos($Fuente2);
+	}
+}
+
+.contenedor--cajas .caja a {
+	text-decoration: none;
+	color: $color-variacion;
+	@include titulos($Fuente2);
+}
+
+.contenido {
+	margin-bottom: 40px;
+	justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 30px 10px;
+	gap: 20px;
+	@include media(tablet) {
+		flex-direction: row;
+	}
+}
+
+.caja--con-fondo {
+	display: block;
+	box-shadow: none;
+	position: relative;
+	min-height: 500px;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.534);
+	background: $color-primario;
+	border-radius: 5px;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		opacity: .5;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+	&__contenido {
+		padding: 20px 0;
+		position: absolute;
+		text-align: center;
+		color: $color-claro;
+		p {
+			color: $color-claro;
+		}
+		h3 {
+			color: $color-claro;
+		}
+	}
+	&__categoria {
+		display: inline-block;
+		min-width: 100px;
+		padding: 5px 10px;
+		margin: 0 auto 10px;
+		text-align: center;
+		background: $color-secundario;
+		color: $color-claro;
+		@include titulos($Fuente2);
+		font-weight: normal;
+		border-radius: 3px;
+	}
+}
+
+.caja--grande {
+	h2 {
+		@include titulos($Fuente2);
+		@include media(tablet) {
+			@include font-size(35px);
+		}
+	}
+	.caja--con-fondo__contenido {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		padding: 40px 20px;
+	}
+}
+
+.caja--mediana {
+	min-height: 400px;
+	.caja--con-fondo__contenido {
+		padding: 20px 20px 0px;
+		h2 {
+			@include media(tablet) {
+				@include font-size(30px);
+			}
+		}
+	}
+}
+
+.caja--pequena {
+	min-height: 300px;
+	.caja--con-fondo__contenido {
+		text-align: left;
+		padding: 20px 0px 0;
+		h2 {
+			padding-left: 20px;
+			max-width: 180px;
+			@include font-size(20px);
+			text-transform: capitalize;
+			font-weight: 500;
+			@include media(tablet) {
+				@include font-size(24px);
+			}
+		}
+	}
+}
+
+.caja-perfil {
+	@include media(tablet) {
+		display: flex;
+	}
+}

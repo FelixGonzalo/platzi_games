@@ -1,0 +1,23 @@
+.articulos {
+  grid-area: articulos;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.articulo {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid $color-secundario;
+  &__categoria {
+    font-size:16px;
+    color: $color-secundario;
+    @include titulos($fuente2);
+  }
+  &__titulo {
+    font-size: 20px;
+    @include titulos($fuente2);
+  }
+}

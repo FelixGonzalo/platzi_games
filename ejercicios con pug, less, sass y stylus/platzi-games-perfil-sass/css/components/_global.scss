@@ -1,0 +1,57 @@
+$fuente1: 'Lato', sans-serif;
+$fuente2: 'Oswald', sans-serif;
+$color-primario: #333333;
+$color-claro: #FFFFFF;
+$color-secundario: #8841DA;
+$color-variacion: #3f579a;
+
+@mixin caja {
+  border-radius: 20px;
+  box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.452);
+  color: $color-primario;
+  background-color: $color-claro;
+}
+
+@mixin titulos($fuente) {
+  @if $fuente == $fuente1 {
+    font-family: $fuente1;
+  } @else {
+    font-family: $fuente2;
+    text-transform: uppercase;
+  }
+}
+
+@function get-opacity($color, $nivel) {
+  @return rgba($color, $nivel);
+}
+
+@each $header, $size in (h1: 30px, h2: 25px, h3: 20px) {
+  #{$header} {
+    font-size: $size;
+    margin: 5px 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  @include titulos($fuente1);
+}
+
+main {
+  display: grid;
+  grid-template-areas: "perfil" "articulos";
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-areas: "perfil articulos";
+  }
+}

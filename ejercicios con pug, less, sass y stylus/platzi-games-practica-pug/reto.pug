@@ -1,0 +1,18 @@
+extend components/plantilla.pug
+block contenidos
+  main.contenido_dividido
+    aside.menu
+      h2.menu-title Menu
+      ul
+      each enlace in enlaces
+        li= enlace
+    section.contenido
+      div.wrapper
+        h2= titulos[0]
+        p
+          | Lorem ipsum dolor si sit.
+          | Lorem ipsum dolor sit amet.
+          | Voluptate esse magna labore aliqua ea qui.
+          | Lorem ipsum dolor sit amet consectetur adipisicing.
+          span Lorem ipsum dolor, sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit.
+        a.boton Leer Más

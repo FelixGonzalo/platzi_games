@@ -1,0 +1,58 @@
+fuente1 = 'Lato', sans-serif
+fuente2 = 'Oswald', sans-serif
+color-primario = #333333
+color-secundario = #8841da
+color-claro = #FFFFFF
+
+contenedor()
+  display: flex
+  flex-wrap: wrap
+  gap: 20px
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding-top: 30px
+  padding-bottom: 30px
+
+contenedor_grid()
+  display: grid
+  gap: 20px
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  grid-template-columns: repeat(1, 1fr);
+  @media screen and (min-width: 768px)
+    grid-template-columns: repeat(2, 1fr);
+  @media screen and (min-width: 1200px)
+    grid-template-columns: repeat(3, 1fr);
+
+caja-sombra()
+  background-color: color-claro
+  box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.20)
+
+opacidad(color, nivel)
+  alpha(color, nivel)
+
+for header in 3 2 1
+  h{header}
+    font-size: 35px - (5*header)
+    margin: 0
+
+titulos(fuente)
+  if fuente == fuente1
+    font-family: fuente1
+  else
+    font-family: fuente2
+    font-weight: 600
+    text-transform: uppercase
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  color: color-primario
+  titulos(fuente1)
+
+.wrapper
+  padding: 0px 20px
